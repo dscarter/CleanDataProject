@@ -1,138 +1,252 @@
-#Data set desctiption
+# Code Book 
+
+This file describes the original data set and how it was manipulated.
+
+## Original Data set description with Units.
 
 From the original data, this is the description provided for the data.
 
+>==================================================================
+>Human Activity Recognition Using Smartphones Dataset
+>Version 1.0
+>==================================================================
+>Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
+>Smartlab - Non Linear Complex Systems Laboratory
+>DITEN - Università degli Studi di Genova.
+>Via Opera Pia 11A, I-16145, Genoa, Italy.
+>activityrecognition@smartlab.ws
+>www.smartlab.ws
+>==================================================================
 
+>The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
 
-==================================================================
-Human Activity Recognition Using Smartphones Dataset
-Version 1.0
-==================================================================
-Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
-Smartlab - Non Linear Complex Systems Laboratory
-DITEN - Università degli Studi di Genova.
-Via Opera Pia 11A, I-16145, Genoa, Italy.
-activityrecognition@smartlab.ws
-www.smartlab.ws
-==================================================================
+>The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
 
-The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+>For each record it is provided:
+>======================================
 
-The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
+>- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+>- Triaxial Angular velocity from the gyroscope. 
+>- A 561-feature vector with time and frequency domain variables. 
+>- Its activity label. 
+>- An identifier of the subject who carried out the experiment.
 
-For each record it is provided:
-======================================
+>The dataset includes the following files:
+>=========================================
 
-- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
-- Triaxial Angular velocity from the gyroscope. 
-- A 561-feature vector with time and frequency domain variables. 
-- Its activity label. 
-- An identifier of the subject who carried out the experiment.
+>- 'README.txt'
 
-The dataset includes the following files:
-=========================================
+>- 'features_info.txt': Shows information about the variables used on the feature vector.
 
-- 'README.txt'
+>- 'features.txt': List of all features.
 
-- 'features_info.txt': Shows information about the variables used on the feature vector.
+>- 'activity_labels.txt': Links the class labels with their activity name.
 
-- 'features.txt': List of all features.
+>- 'train/X_train.txt': Training set.
 
-- 'activity_labels.txt': Links the class labels with their activity name.
+>- 'train/y_train.txt': Training labels.
 
-- 'train/X_train.txt': Training set.
+>- 'test/X_test.txt': Test set.
 
-- 'train/y_train.txt': Training labels.
+>- 'test/y_test.txt': Test labels.
 
-- 'test/X_test.txt': Test set.
+>The following files are available for the train and test data. Their descriptions are equivalent. 
 
-- 'test/y_test.txt': Test labels.
+>- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
 
-The following files are available for the train and test data. Their descriptions are equivalent. 
+>- 'train/Inertial Signals/total_acc_x_train.txt': The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total_acc_x_train.txt' and 'total_acc_z_train.txt' files for the Y and Z axis. 
 
-- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+>- 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
 
-- 'train/Inertial Signals/total_acc_x_train.txt': The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total_acc_x_train.txt' and 'total_acc_z_train.txt' files for the Y and Z axis. 
+>- 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
 
-- 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
+>Notes: 
+>======
+>- Features are normalized and bounded within [-1,1].
+>- Each feature vector is a row on the text file.
 
-- 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
+>For more information about this dataset contact: activityrecognition@smartlab.ws
 
-Notes: 
-======
-- Features are normalized and bounded within [-1,1].
-- Each feature vector is a row on the text file.
+>License:
+>========
+>Use of this dataset in publications must be acknowledged by referencing the following publication [1] 
 
-For more information about this dataset contact: activityrecognition@smartlab.ws
+>[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
 
-License:
-========
-Use of this dataset in publications must be acknowledged by referencing the following publication [1] 
+>This dataset is distributed AS-IS and no responsibility implied or explicit can be addressed to the authors or their institutions for its use or misuse. Any commercial use is prohibited.
 
-[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
-
-This dataset is distributed AS-IS and no responsibility implied or explicit can be addressed to the authors or their institutions for its use or misuse. Any commercial use is prohibited.
-
-Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012.
+>Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012.
 
 
 
-Feature Selection 
-=================
+>Feature Selection 
+>=================
 
-The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+>The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
-Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+>Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
 
-Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+>Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
 
-These signals were used to estimate variables of the feature vector for each pattern:  
-'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+>These signals were used to estimate variables of the feature vector for each pattern:  
+>'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
+>tBodyAcc-XYZ
+>tGravityAcc-XYZ
+>tBodyAccJerk-XYZ
+>tBodyGyro-XYZ
+>tBodyGyroJerk-XYZ
+>tBodyAccMag
+>tGravityAccMag
+>tBodyAccJerkMag
+>tBodyGyroMag
+>tBodyGyroJerkMag
+>fBodyAcc-XYZ
+>fBodyAccJerk-XYZ
+>fBodyGyro-XYZ
+>fBodyAccMag
+>fBodyAccJerkMag
+>fBodyGyroMag
+>fBodyGyroJerkMag
 
-The set of variables that were estimated from these signals are: 
+>The set of variables that were estimated from these signals are: 
 
-mean(): Mean value
-std(): Standard deviation
-mad(): Median absolute deviation 
-max(): Largest value in array
-min(): Smallest value in array
-sma(): Signal magnitude area
-energy(): Energy measure. Sum of the squares divided by the number of values. 
-iqr(): Interquartile range 
-entropy(): Signal entropy
-arCoeff(): Autorregresion coefficients with Burg order equal to 4
-correlation(): correlation coefficient between two signals
-maxInds(): index of the frequency component with largest magnitude
-meanFreq(): Weighted average of the frequency components to obtain a mean frequency
-skewness(): skewness of the frequency domain signal 
-kurtosis(): kurtosis of the frequency domain signal 
-bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
-angle(): Angle between to vectors.
+>mean(): Mean value
+>std(): Standard deviation
+>mad(): Median absolute deviation 
+>max(): Largest value in array
+>min(): Smallest value in array
+>sma(): Signal magnitude area
+>energy(): Energy measure. Sum of the squares divided by the number of values. 
+>iqr(): Interquartile range 
+>entropy(): Signal entropy
+>arCoeff(): Autorregresion coefficients with Burg order equal to 4
+>correlation(): correlation coefficient between two signals
+>maxInds(): index of the frequency component with largest magnitude
+>meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+>skewness(): skewness of the frequency domain signal 
+>kurtosis(): kurtosis of the frequency domain signal 
+>bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
+>angle(): Angle between to vectors.
 
-Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
+>Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
 
-gravityMean
-tBodyAccMean
-tBodyAccJerkMean
-tBodyGyroMean
-tBodyGyroJerkMean
+>gravityMean
+>tBodyAccMean
+>tBodyAccJerkMean
+>tBodyGyroMean
+>tBodyGyroJerkMean
 
-The complete list of variables of each feature vector is available in 'features.txt'
+>The complete list of variables of each feature vector is available in 'features.txt'
+
+
+
+## Process Used to Clean and Summarize the data set
+
+1. Load plyr package and set the working directory
+2. Read the training and test data sets.
+3. Combine the training and test data sets using rbind.
+4. For the labels and subject data tables rename the columns as "activity" and "subject" respectively.
+5. Read the features.txt file from the raw data to get the variable names for the data.
+6. Use cbind to combine the labels, subject, and set datasets into a single dataset called singledataset.  This accomplishes Step 1 of the instructions.
+7. From the features.txt data set, use grep to get a list of columns that contain the phrases "mean" or "std".  Those are the columns that will be summarized later.
+8. Subset singledataset to only keep those variables that have "mean" or "std" in their names.  This accomplishes Step 2 of the instructions.
+9. Read the activity_labels.txt raw data file to get descriptive names for the activities.
+10.  Merge the activity_labels.txt data table into singledataset.  This accomplishes Step 3 of the instructions.
+11.  Use sub and gsub to give the variables more descriptive names than the original data set.  The substitutions made were:
+	* Remove special characters ( ) - , _
+	* Replace "mean" with "Mean"
+	* Replace "std" with "Std"
+	* Replace "bodybody" with "Body"
+	* Replace variables starting with "t" to start with "Time" 
+	* Replace variables starting with "f" to start with "FFT"
+	* Replace "Mag" with "Magnitude"
+	* Replace "Acc" with "Acceleration"	
+	* Replace "Freq" with "Frequency"
+	* This accomplishes Step 4 of the instructions.
+12.  Use ddply on singledataset to calculate the colMeans by subject and activity.
+13.  Use write.table to create the tidy data set.  This accomplishes Step 5 of the instructions.
+
+
+## Resultant tidy data set.
+The tidy data set has 180 observations on 81 variables (including activity and subject)
+The variables averaged over activity and subject are:
+TimeBodyAccelerationMeanX                         
+TimeBodyAccelerationMeanY                         
+TimeBodyAccelerationMeanZ                         
+TimeBodyAccelerationStdX                          
+TimeBodyAccelerationStdY                          
+TimeBodyAccelerationStdZ                          
+TimeGravityAccelerationMeanX                      
+TimeGravityAccelerationMeanY                      
+TimeGravityAccelerationMeanZ                      
+TimeGravityAccelerationStdX                       
+TimeGravityAccelerationStdY                       
+TimeGravityAccelerationStdZ                       
+TimeBodyAccelerationJerkMeanX                     
+TimeBodyAccelerationJerkMeanY                     
+TimeBodyAccelerationJerkMeanZ                     
+TimeBodyAccelerationJerkStdX                      
+TimeBodyAccelerationJerkStdY                      
+TimeBodyAccelerationJerkStdZ                      
+TimeBodyGyroMeanX                                 
+TimeBodyGyroMeanY                                 
+TimeBodyGyroMeanZ                                 
+TimeBodyGyroStdX                                  
+TimeBodyGyroStdY                                  
+TimeBodyGyroStdZ                                  
+TimeBodyGyroJerkMeanX                             
+TimeBodyGyroJerkMeanY                             
+TimeBodyGyroJerkMeanZ                             
+TimeBodyGyroJerkStdX                              
+TimeBodyGyroJerkStdY                              
+TimeBodyGyroJerkStdZ                              
+TimeBodyAccelerationMagnitudeMean                 
+TimeBodyAccelerationMagnitudeStd                  
+TimeGravityAccelerationMagnitudeMean              
+TimeGravityAccelerationMagnitudeStd               
+TimeBodyAccelerationJerkMagnitudeMean             
+TimeBodyAccelerationJerkMagnitudeStd              
+TimeBodyGyroMagnitudeMean                         
+TimeBodyGyroMagnitudeStd                          
+TimeBodyGyroJerkMagnitudeMean                     
+TimeBodyGyroJerkMagnitudeStd                      
+FFT-BodyAccelerationMeanX                         
+FFT-BodyAccelerationMeanY                         
+FFT-BodyAccelerationMeanZ                         
+FFT-BodyAccelerationStdX                          
+FFT-BodyAccelerationStdY                          
+FFT-BodyAccelerationStdZ                          
+FFT-BodyAccelerationMeanFrequencyX                
+FFT-BodyAccelerationMeanFrequencyY                
+FFT-BodyAccelerationMeanFrequencyZ                
+FFT-BodyAccelerationJerkMeanX                     
+FFT-BodyAccelerationJerkMeanY                     
+FFT-BodyAccelerationJerkMeanZ                     
+FFT-BodyAccelerationJerkStdX                      
+FFT-BodyAccelerationJerkStdY                      
+FFT-BodyAccelerationJerkStdZ                      
+FFT-BodyAccelerationJerkMeanFrequencyX            
+FFT-BodyAccelerationJerkMeanFrequencyY            
+FFT-BodyAccelerationJerkMeanFrequencyZ            
+FFT-BodyGyroMeanX                                 
+FFT-BodyGyroMeanY                                 
+FFT-BodyGyroMeanZ                                 
+FFT-BodyGyroStdX                                  
+FFT-BodyGyroStdY                                  
+FFT-BodyGyroStdZ                                  
+FFT-BodyGyroMeanFrequencyX                        
+FFT-BodyGyroMeanFrequencyY                        
+FFT-BodyGyroMeanFrequencyZ                        
+FFT-BodyAccelerationMagnitudeMean                 
+FFT-BodyAccelerationMagnitudeStd                  
+FFT-BodyAccelerationMagnitudeMeanFrequency        
+FFT-BodyBodyAccelerationJerkMagnitudeMean         
+FFT-BodyBodyAccelerationJerkMagnitudeStd          
+FFT-BodyBodyAccelerationJerkMagnitudeMeanFrequency
+FFT-BodyBodyGyroMagnitudeMean                     
+FFT-BodyBodyGyroMagnitudeStd                      
+FFT-BodyBodyGyroMagnitudeMeanFrequency            
+FFT-BodyBodyGyroJerkMagnitudeMean                 
+FFT-BodyBodyGyroJerkMagnitudeStd                  
+FFT-BodyBodyGyroJerkMagnitudeMeanFrequency 
